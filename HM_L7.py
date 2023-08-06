@@ -6,17 +6,16 @@
 # от друга пробелами. Стихотворение Винни-Пух вбивает в программу с клавиатуры. В ответе
 # напишите “Парам пам-пам”, если с ритмом все в порядке и “Пам парам”, если с ритмом все не
 # в порядке
-str1 = 'привет как дела'
-str3 = str1.split()
-print(str3)
-str2 = list(filter(lambda x: x in 'аяуюэеиыоё', str1))
-print(str2)
+
 print(lst := input('Введите фразы через пробел: ').split())
-res = []
-for i in lst:
-res.append = filter(lambda x: x in 'аяуюэеиыоё', lst[i])
-# res = len(list(filter(lambda x: x in 'аяуюэеиыоё', lst)))
+# res = []
+# for i in range(len(lst)):
+#     res.append(len(list(filter(lambda x: x in 'аяуюэеиыоё', lst[i]))))
+res = [(len(list(filter(lambda x: x in 'аяуюэеиыоё', lst[i]))))
+       for i in range(len(lst))]
 # print(res)
+print('Парам пам-пам') if len(set(res)) == 1 else print('Пам парам')
+
 
 # Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6),
 # которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и
@@ -24,3 +23,26 @@ res.append = filter(lambda x: x in 'аяуюэеиыоё', lst[i])
 # которые должны быть распечатаны. Нумерация строк и столбцов идет с единицы (подумайте,
 # почему не с нуля). Примечание: бинарной операцией называется любая операция, у которой
 # ровно два аргумента, как, например, у операции умножения.
+
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for i in range(1, num_rows + 1):
+        return_string = ""
+        for j in range(1, num_columns + 1):
+            return_string += str(operation(i, j)) + " "
+        print(return_string.strip())
+
+
+print_operation_table(lambda x, y: x * y)
+
+# Альтернативное решение
+
+
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    a = [[operation(i, j) for j in range(1, num_columns + 1)]
+         for i in range(1, num_rows + 1)]
+    for i in a:
+        print(*[f'{x:>3}' for x in i])
+
+
+print_operation_table(lambda x, y: x * y)
