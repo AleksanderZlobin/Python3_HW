@@ -26,7 +26,7 @@ info = get_info()
 
 
 def writing_txt():
-    file = 'phonebook.txt'
+    file = 'Python3_HW/phonebook.txt'
     with open(file, 'a', encoding='utf-8') as data:
         data.write(
             f'Фамилия: {info[0]}\n\nИмя: {info[1]}\n\nНомер телефона: {info[2]}\n\nОписание: {info[3]}\n\n\n')
@@ -34,3 +34,6 @@ def writing_txt():
 
 def main():
     writing_txt()
+
+
+main()
