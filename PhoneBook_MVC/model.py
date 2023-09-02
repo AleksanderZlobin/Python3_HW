@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-PATH = 'PhoneBook/phonebook.txt'
+PATH = 'Python3_HW/PhoneBook_MVC/phonebook.txt'
 phone_book = {}
 original_book = {}
 

@@ -2,6 +2,8 @@
 
 from random import randint
 
+n = int(input('Введите число: '))
+
 
 def fibo(n):
     if n in [0, 1]:
@@ -9,7 +11,7 @@ def fibo(n):
     return fibo(n-1) + fibo(n-2)
 
 
-print(fibo(8))
+print(fibo(n))
 
 
 # Хакер Василий получил доступ к классному журналу и
